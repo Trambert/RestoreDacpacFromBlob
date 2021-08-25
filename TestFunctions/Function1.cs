@@ -38,9 +38,11 @@ namespace TestFunctions
             dacOptions.ScriptDatabaseCompatibility = false;
             dacOptions.AllowIncompatiblePlatform = true;
             dacOptions.ExcludeObjectTypes = new ObjectType[1] { ObjectType.Assemblies };
-            DacAzureDatabaseSpecification DBSpec = new DacAzureDatabaseSpecification();
-            DBSpec.Edition = DacAzureEdition.Basic;
-            DBSpec.ServiceObjective = "basic";
+            DacAzureDatabaseSpecification DBSpec = new DacAzureDatabaseSpecification
+            {
+                Edition = DacAzureEdition.Basic,
+                ServiceObjective = "basic"
+            };
             dacOptions.DatabaseSpecification = DBSpec;
             publishOptions.DeployOptions = dacOptions;
 
